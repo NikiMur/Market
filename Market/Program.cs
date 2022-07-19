@@ -343,57 +343,6 @@ namespace GameTestOne
             }
 
 
-            void InputNumbers(int num)
-            {
-                int count = 0;
-                int inputNum;
-                string rowNum = String.Empty;
-                Console.WriteLine("А теперь вводи целые числа, а если ошибешься не беда, я умный, кроме чисел ничего не записываю)))))");
-                for (int i = 0; i < num; i++)
-                {
-                    do
-                    {
-                        Console.WriteLine("Введи целое число: ");
-                    }
-                    while (!int.TryParse(Console.ReadLine(), out inputNum));
-                    if (inputNum > 0) count++;
-                    rowNum += inputNum + " ";
-                }
-                Console.WriteLine("Вот числа которые ты ввел: ");
-                Console.WriteLine(rowNum);
-                PrintCount(count, num);
-            }
-
-            void RandomNumbers(int num)
-            {
-                int count = 0;
-                Random rand = new Random();
-                int randomNum;
-                string rowNum = String.Empty;
-                for (int i = 0; i < num; i++)
-                {
-                    randomNum = rand.Next(-9, 10);
-                    if (randomNum > 0) count++;
-                    rowNum += randomNum + " ";
-                }
-                Console.WriteLine("Вот числа которые я придумал: ");
-                Console.WriteLine(rowNum);
-                Console.WriteLine($"Из предуманных мной чисел положительных {count}");
-            }
-            
-
-            void PrintCount(int count, int num)
-            {
-                string[] array = { "Все отрицательные", "Маловато положительных! Маловато будет!", "Ух ты! Все положительные" };
-                int position = (count > 0 ? 1 : 0) + (count == num ? 1 : 0);
-                Console.WriteLine();
-                Console.WriteLine($"Из введенных положительных чисел {count}");
-                Console.WriteLine();
-                Console.WriteLine(array[position]);
-            }
-            Console.SetCursorPosition(saller.MassageX, saller.MassageY);
-            CountPositiveNum();
-
             
 
 
